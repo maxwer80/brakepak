@@ -46,6 +46,7 @@
   <div class="field">
     <%= f.label :subCategory_id %><br>
     <%= f.collection_select(:subCategory_id, @subcategorias, :id, :name) %>
+    
   </div>
   <div class="actions">
     <%= f.submit %>

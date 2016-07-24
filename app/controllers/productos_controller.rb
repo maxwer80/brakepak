@@ -1,6 +1,7 @@
 class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
   before_action :subcategories, only: [:new, :edit]
+  before_action :categories, only: [:edit, :new]
   # GET /productos
   # GET /productos.json
   def index
@@ -66,7 +67,11 @@ class ProductosController < ApplicationController
     def set_producto
       @producto = Producto.find(params[:id])
     end
-    
+
+    def categories 
+      @categorias = Category.all
+    end
+      
     def subcategories
       @subcategorias = SubCategory.all
     end

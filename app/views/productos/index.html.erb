@@ -27,9 +27,9 @@
         <td><%= producto.marca %></td>
         <td><%= producto.serie %></td>
         <td><%= producto.pos %></td>
-        <td><%= producto.imagen %></td>
+        <td><%= producto.imagen image_tag @producto.imagen.url %></td>
         <td><%= producto.conjunto %></td>
-        <td><%= producto.subCategory %></td>
+        <td><%= producto.subCategory.name %></td>
         <td><%= link_to 'Show', producto %></td>
         <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
         <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>

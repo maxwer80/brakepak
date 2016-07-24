@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @producto.ref %>
+</p>
+
+<p>
+  <strong>Fmsi:</strong>
+  <%= @producto.fmsi %>
+</p>
+
+<p>
+  <strong>Alterno:</strong>
+  <%= @producto.alterno %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @producto.marca %>
+</p>
+
+<p>
+  <strong>Serie:</strong>
+  <%= @producto.serie %>
+</p>
+
+<p>
+  <strong>Pos:</strong>
+  <%= @producto.pos %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= image_tag @producto.imagen.url %>
+</p>
+
+<p>
+  <strong>Conjunto:</strong>
+  <%= @producto.conjunto %>
+</p>
+
+<p>
+  <strong>Subcategory:</strong>
+  <%= @producto.subCategory.name %>
+</p>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>

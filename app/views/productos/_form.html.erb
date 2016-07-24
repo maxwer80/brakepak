@@ -1,0 +1,53 @@
+<%= form_for(@producto,html:{multipart: true}) do |f| %>
+  <% if @producto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+
+      <ul>
+      <% @producto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ref %><br>
+    <%= f.text_field :ref %>
+  </div>
+  <div class="field">
+    <%= f.label :fmsi %><br>
+    <%= f.text_field :fmsi %>
+  </div>
+  <div class="field">
+    <%= f.label :alterno %><br>
+    <%= f.text_field :alterno %>
+  </div>
+  <div class="field">
+    <%= f.label :marca %><br>
+    <%= f.text_field :marca %>
+  </div>
+  <div class="field">
+    <%= f.label :serie %><br>
+    <%= f.text_field :serie %>
+  </div>
+  <div class="field">
+    <%= f.label :pos %><br>
+    <%= f.text_field :pos %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen %><br>
+    <%= f.file_field :imagen %>
+  </div>
+  <div class="field">
+    <%= f.label :conjunto %><br>
+    <%= f.text_field :conjunto %>
+  </div>
+  <div class="field">
+    <%= f.label :subCategory_id %><br>
+    <%= f.collection_select(:subCategory_id, @subcategorias, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

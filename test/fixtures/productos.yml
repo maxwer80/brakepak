@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  fmsi: MyString
+  alterno: MyString
+  marca: MyString
+  serie: MyString
+  pos: MyString
+  imagen: MyString
+  conjunto: MyString
+  subCategory_id: 
+
+two:
+  ref: MyString
+  fmsi: MyString
+  alterno: MyString
+  marca: MyString
+  serie: MyString
+  pos: MyString
+  imagen: MyString
+  conjunto: MyString
+  subCategory_id: 

@@ -44,9 +44,12 @@
     <%= f.text_field :conjunto %>
   </div>
   <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select(:category_id, @categorias, :id, :name) %>
+  </div>
+  <div class="field">
     <%= f.label :subCategory_id %><br>
     <%= f.collection_select(:subCategory_id, @subcategorias, :id, :name) %>
-    
   </div>
   <div class="actions">
     <%= f.submit %>

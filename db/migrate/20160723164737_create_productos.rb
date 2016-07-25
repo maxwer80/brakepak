@@ -9,7 +9,7 @@ class CreateProductos < ActiveRecord::Migration
       t.string :pos
       t.string :imagen
       t.string :conjunto
-      t.references :subCategory, index: true, foreign_key: true
+      t.references :category, index: true, foreign_key: true
 
       t.timestamps null: false
     end

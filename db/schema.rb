@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723164737) do
+ActiveRecord::Schema.define(version: 20160725003252) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "subCategory_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
+
+  add_index "categories", ["subCategory_id"], name: "index_categories_on_subCategory_id"
 
   create_table "productos", force: :cascade do |t|
     t.string   "ref"
@@ -28,11 +31,13 @@ ActiveRecord::Schema.define(version: 20160723164737) do
     t.string   "pos"
     t.string   "imagen"
     t.string   "conjunto"
-    t.integer  "subCategory_id"
+    t.integer  "category_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "subCategory_id"
   end
 
+  add_index "productos", ["category_id"], name: "index_productos_on_category_id"
   add_index "productos", ["subCategory_id"], name: "index_productos_on_subCategory_id"
 
   create_table "sub_categories", force: :cascade do |t|
